@@ -1,0 +1,49 @@
+h1 {
+  font-weight: bold;
+  float: left;
+  margin: 0;
+  margin-top:5px;
+  border-bottom: 5px solid;
+}
+
+.no-gutters-column{
+  padding:0;
+}
+
+.postcard {
+  margin-bottom: 10px !important;
+  max-width: 400px;
+  height: 400px;
+  min-width: 200px;
+  height: auto;
+  background: white;
+  display: inline-table;
+  margin-left: auto;
+  margin-right: auto;
+  h5 {
+    color: #61452f;
+    max-width: 300px;
+    width: auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  img {
+    height: auto;
+    max-height: 300px;
+    width: auto;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.postcard:hover {
+  h5 {
+    color: #e2d0be;
+  }
+  img {
+    opacity: 0.7;
+  }
+  background: #61452f;
+}

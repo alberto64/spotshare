@@ -1,0 +1,15 @@
+<div class="container-fluid outer-bound light-standard">
+  <div class="row">
+    <h1>Postcard Collection Available:</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="shadow mr-auto p-auto location" *ngFor="let location of locations">
+        <a name="postcard" class="btn" (click)="postPostcard(location)">
+              <img src="{{location.picture.data.url}}" alt="postcard">
+              <h5><strong>{{location.name}}</strong></h5>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

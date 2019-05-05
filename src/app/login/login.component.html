@@ -1,0 +1,19 @@
+<div class="light-standard outer-bound">
+  <h2>Log In:</h2>
+    <div class="form-group row">
+      <label class="col-sm-auto col-form-label">Username:</label>
+      <div class="col-sm-5" style="margin-top:10px;">
+        <input class="form-control" [(ngModel)]="user" [ngModelOptions]="{standalone: true}" name="username" placeholder="username"/>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-auto col-form-label">Password:</label>
+      <div class="col-sm-5" style="margin-top:10px;">
+        <input class="form-control" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" name="password" type="password" placeholder="password"/>
+      </div>
+
+    </div>
+    <button class="btn btn-outline-dark btn-wave dark-standard m-2" type="submit" (click)="submit()">Submit</button>
+    <button class="btn btn-outline-dark btn-wave dark-standard m-2" type="back" (click)="goBack()">Back</button>
+</div>

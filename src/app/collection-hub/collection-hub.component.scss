@@ -1,0 +1,42 @@
+.no-gutters-column{
+  padding:0;
+}
+
+.location {
+  background: white;
+  margin-bottom: 10px;
+  a {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+  h5 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  img {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+  }
+}
+
+.location:hover {
+  h5 {
+    color: #e2d0be;
+  }
+  img {
+    opacity: 0.7;
+  }
+  background: #61452f;
+}
+
+h5 {
+  width: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

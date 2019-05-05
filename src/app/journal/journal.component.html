@@ -1,0 +1,11 @@
+<div class="light-standard outer-bound">
+  <h1>Collection Journal:</h1>
+  <div *ngIf='activity'>
+    <p>Postcards Collected: {{activity.postcardCount}}</p>
+    <div *ngIf="activity.postcardCollectionLog">
+      <div class="" *ngFor="let log of activity.postcardCollectionLog">
+        <p>{{log}}</p>
+      </div>
+    </div>
+  </div>
+</div>

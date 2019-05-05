@@ -1,0 +1,87 @@
+<div class="light-standard outer-bound">
+  <div *ngIf="!isInEditMode()">
+    <div class="row m-5">
+      <div *ngIf="leftCheck()">
+        <a class="btn btn-outline-dark dark-standard col p-2" href="/postcard/{{type}}/{{left}}">Go To Left</a>
+      </div>
+      <button class="btn btn-outline-dark dark-standard col p-2" (click)="goBack()">Back</button>
+      <div *ngIf="right">
+        <a class="btn btn-outline-dark dark-standard col p-2" href="/postcard/{{type}}/{{right}}">Go To Right</a>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isInViewOrPreview()">
+    <div *ngIf='postcard.style'>
+      <div class="container shadow row postcard m-auto p-4" [ngStyle]="{'background': this.postcard.style.content['background\-color'], 'font-family': this.postcard.style.content['font\-family'], 'font-size': this.postcard.style.content['font\-size']}">
+        <div class="col-md-6 col-sm-10 no-gutters-column">
+            <img src="{{postcard.imgUrl}}" alt="postcard">
+        </div>
+        <div class="col-md-6 col-sm-10">
+            <h2 [ngStyle]="{'font-family': this.postcard.style.title['font\-family'], 'font-size': this.postcard.style.title['font\-size']}"><strong>{{postcard.title}}</strong></h2>
+            <p><i>From ({{postcard.latitude}},{{postcard.longitude}}) on {{postcard.date}} </i></p>
+            <p>
+              {{postcard.message}}
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isInEditMode()">
+    <div *ngIf="!isInViewOrPreview()">
+      <h2>Edit Postcard:</h2>
+      <div class="form-group row">
+        <label class="col-sm-auto col-form-label">Title:</label>
+        <div class="col-sm-5" style="margin-top:10px;">
+          <input class="form-control" [(ngModel)]="postcard.title" type="title" placeholder="title"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-auto col-form-label">Image URL:</label>
+        <div class="col-sm-5" style="margin-top:10px;">
+          <input class="form-control" [(ngModel)]="postcard.imgUrl" type="url" placeholder="URL"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-auto col-form-label">Message:</label>
+        <div class="col-sm-5" style="margin-top:10px;">
+          <textarea class="form-control" [(ngModel)]="postcard.message" type="text" placeholder="Your Message"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-outline-dark btn-wave dark-standard m-2" type="submit" (click)="submitPostcard()">Submit</button>
+    </div>
+  </div>
+  <div *ngIf="isUserOwner()">
+    <div class="row">
+      <button class="btn btn-outline-dark btn-wave dark-standard m-3" type="submit" (click)="editToggle()">Turn {{edit}} Edit Mode</button>
+    </div>
+    <div *ngIf="isInEditMode()">
+      <div class="row">
+        <button class="btn btn-outline-dark btn-wave dark-standard m-3" type="submit" (click)="previewToggle()">Preview</button>
+      </div>
+    </div>
+    <div *ngIf="!isInEditMode()">
+      <div class="row">
+        <h3>Add Tag:</h3>
+      </div>
+      <div class="row">
+        <p>Write 'public' for Universal Share, 'sharing:[username]' = Share it with the owner of that username, 'category:[topic]' = Categize a postcard with that topic</p>
+      </div>
+      <div class="row" style="margin-top:10px;">
+        <input class="form-control" type="email" [(ngModel)]="tagToAdd" [ngModelOptions]="{standalone: true}" type="username" placeholder="Tag"/>
+        <button class="btn btn-outline-dark btn-wave dark-standard m-2" type="submit" (click)="submit()" >Post</button>
+      </div>
+      <h3>Tags:</h3>
+      <div class="row">
+        <div *ngFor="let tag of tags">
+            <div class="btn tag shadow m-2">
+              <h4 name="tag" >{{tag.text}}</h4>
+              <button (click)="removeTag(tag.type, tag.text)" type="button" class="close m-1" aria-label="Close">
+                 <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

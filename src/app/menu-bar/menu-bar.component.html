@@ -1,0 +1,38 @@
+<nav class="shadow navbar navbar-expand-lg sticky-top navbar-light">
+  <a class="navbar-brand" (click)=goToHome()>Spot-Share</a>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNavAltMarkup"  aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="isCollapsed">
+    <div class="navbar-nav">
+      <div *ngIf="loggedIn()">
+        <a class="nav-item nav-link" href="/album/collected">My Postcards</a>
+      </div>
+      <div *ngIf="loggedIn()">
+        <a class="nav-item nav-link" href="/album/shared">Shared Postcards</a>
+      </div>
+      <div *ngIf="loggedIn()">
+        <a class="nav-item nav-link" href="/album/public">Public Postcards</a>
+      </div>
+      <div *ngIf="loggedIn()">
+        <a class="nav-item nav-link" href="/journal">Collection Journal</a>
+      </div>
+      <a class="nav-item nav-link" href="/contact-us">Contact Us</a>
+      <a class="nav-item nav-link" href="https://github.com/UPRM-INSO4117-S19/testingproject-o-really">Help</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <div *ngIf="!loggedIn()" >
+        <a class="nav-item nav-link" href="/login">Log In</a>
+      </div>
+      <div *ngIf="!loggedIn()" >
+        <a class="nav-item nav-link" href="/signup">Sign Up</a>
+      </div>
+      <div *ngIf="gotUsername()">
+        <a class="nav-item nav-link" href="/settings">{{username}}'s Settings</a>
+      </div>
+      <div *ngIf="loggedIn()">
+        <a class="nav-item nav-link" name="logout" (click)="signOut()">Log Out</a>
+      </div>
+    </div>
+  </div>
+</nav>

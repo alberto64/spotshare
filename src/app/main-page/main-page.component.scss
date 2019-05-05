@@ -1,0 +1,40 @@
+img {
+  width:100%;
+  padding: 0px;
+}
+
+.no-gutters-column{
+  padding:0;
+}
+
+.postcard {
+  background: white;
+  text-align: center;
+  height: 600px;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  img {
+    max-height: 400px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+  h2 {
+    color: #61452f;
+    font-size: 250%;
+  }
+  p {
+    color: #61452f;
+    font-size: 100%;
+  }
+
+  h1 {
+    color: #61452f;
+    font-size: 350%;
+  }
+}
+
+p, li {
+  font-size: 160%;
+}

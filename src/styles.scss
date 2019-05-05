@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  margin:0;
+  color: #61452f;
+}
+
+.light-standard {
+  background-color: #e2d0be;
+  color: #61452f;
+}
+
+.dark-standard {
+  background-color: #61452f;
+  color: #e2d0be;
+}
+
+
+.outer-bound {
+  padding: 5%;
+}

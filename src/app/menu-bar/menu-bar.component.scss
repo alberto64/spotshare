@@ -1,0 +1,32 @@
+nav {
+  background-color: #724319;
+  padding: 0;
+}
+
+nav a {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  color: #E2D0BE;
+}
+
+nav a:hover {
+  background-color: #E2D0BE;
+  color: #54442B;
+}
+
+nav div a {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  color: #E2D0BE;
+}
+
+nav div a:hover {
+  background-color: #E2D0BE;
+  color: #54442B;
+}
+
+.right {
+  float:right;
+}
